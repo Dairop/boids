@@ -86,10 +86,10 @@ void QuadTree::subdivide() {
 };
 
 bool QuadTree::insert(Boid *p){
-    // Insérer un point dans le QuadTree
+    // InsÃ©rer un point dans le QuadTree
     // Ignorer les objets qui n'appartiennent pas a ce quadtree
     if ((abs(boundary.center.x - p->position.x) >= boundary.radius.x) || (abs(boundary.center.y - p->position.y) >= boundary.radius.y)) {
-        return false; // l'objet ne doit pas être ajoute
+        return false; // l'objet ne doit pas Ãªtre ajoute
     }
 
     // S'il reste de la place dans ce quadtree, y ajouter l'objet
@@ -98,7 +98,7 @@ bool QuadTree::insert(Boid *p){
         return true;
     }
 
-    // Sinon, subdiviser le quadtree, puis ajouter le point au nœud qui l'acceptera
+    // Sinon, subdiviser le quadtree, puis ajouter le point au nÅ“ud qui l'acceptera
     if (northWest == nullptr) {
         subdivide();
 
