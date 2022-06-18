@@ -14,21 +14,21 @@ struct rectByCenter {
 class QuadTree
 {
 public:
-	// Constante arbitraire indiquant combien d'éléments peuvent être stockés dans ce nœud de quadtree
+	// Constante arbitraire indiquant combien d'Ã©lÃ©ments peuvent Ãªtre stockÃ©s dans ce nÅ“ud de quadtree
 	const int QT_NODE_CAPACITY = 4;
 
-	// Zone de délimitation alignée sur l'axe (représentée par sa demi-dimension et son centre)
-	// représentant les limites de ce quadtree
+	// Zone de dÃ©limitation alignÃ©e sur l'axe (reprÃ©sentÃ©e par sa demi-dimension et son centre)
+	// reprÃ©sentant les limites de ce quadtree
 	rectByCenter boundary;
 
-	// Points de ce nœeud de quadtree
+	// Points de ce nÅ“eud de quadtree
 	std::vector <Boid*> points;
 
 
-	// Méthodes
+	// MÃ©thodes
 	QuadTree(rectByCenter bd) { boundary = bd; };
 	bool insert(Boid* p);
-	void subdivide(); // créer quatre enfants permettant de diviser ce quadrant en quatre quadrants d'égales dimensions
+	void subdivide(); // crÃ©er quatre enfants permettant de diviser ce quadrant en quatre quadrants d'Ã©gales dimensions
 	void queryRangeRect(rectByCenter range, std::vector<Boid> & pointsInRange);
 	void queryRangeCircle(rectByCenter range, std::vector<Boid>& pointsInRange);
 	void display(sf::RenderWindow&);
